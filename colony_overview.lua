@@ -19,7 +19,6 @@ function round(number, decimals)
 end
 
 function getChildren()
---	local citizens = colony.getCitizens()
 	local children = 0
 	
 	for _, citizen in ipairs(citizens) do
@@ -64,17 +63,6 @@ function stats()
 	
 	mon.setCursorPos(2,9)
 	mon.write("Amount of graves: ".. colony.amountOfGraves())
-	
---[[	mon.setCursorPos(2,10)
-	mon.clearLine()
-	mon.setTextColor(colors.green)
-	local underAttack = "Peacefull"
-	if (colony.isUnderAttack() == true) then
-		mon.setTextColor(colors.red)
-		underAttack = "Is under Attack!"
-	end
-	mon.write(underAttack)
-	mon.setTextColor(colors.white)]]--
 end
 
 prepareMonitor()
@@ -82,5 +70,4 @@ prepareMonitor()
 while true do
 	stats()
 	sleep(5)
-	--mon.clear()
 end
